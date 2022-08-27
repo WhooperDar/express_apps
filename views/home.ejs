@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head.ejs') %>
+
+<body>
+    <div class="nav">
+        <!-- navbar -->
+        <%- include('./partials/nav.ejs') %>
+
+        <h3>Simple recipes made for real. actual. everyday life. </h3>
+    </div>
+
+    <div class="selection">
+        <ul>
+            <li><a href="#">Instant Pot</a></li>
+            <li><a href="#">Meal Prep</a></li>
+            <li><a href="#">Sandwiches</a></li>
+            <li><a href="#">Vegetarian</a></li>
+        </ul>
+    </div>
+
+    <div class="menu">
+        <h2>Type of Dishes</h2>
+        <ul>
+            <li><a href="#">QUICK AND EASY</a></li>
+            <li><a href="#">DINNER</a></li>
+            <li><a href="#">VEGARIAN</a></li>
+            <li><a href="#">HEALTH</a></li>
+            <li><a href="#">INSTANT POT</a></li>
+            <li><a href="#">VEGAN</a></li>
+            <li><a href="#">MEAL PREP</a></li>
+            <li><a href="#">SOUPS</a></li>
+            <li><a href="#">SALADS</a></li>
+        </ul>
+    </div>
+
+    <div class="articles">
+        <h3>The Latest & Greatest</h3>
+        <ul>
+            <% if (articleData.length > 0) { %> 
+                <% articleData.forEach(article => { %>
+                    <p class="date"><%= article.data %></p>
+                    <h4 class="title"><%= article.title%></h4>
+                    <p class="content"><%= article.content%></p>
+                <% }) %> 
+            <% } %>
+        </ul>
+            <form action="/blogs">
+                <input type="submit" value="VIEW MORE RECENT POST">
+            </form>
+    </div>
+
+
+    <%- include('./partials/footer.ejs') %>
+    
+</body>
+</html>
